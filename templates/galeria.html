@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - BIOSAM S.A.</title>
+  <link rel="stylesheet" href="/static/style.css"> 
+</head>
+<body>
+
+  <nav>
+    <div class="logo">bio<span>sam</span></div>
+    <ul class="nav-links">
+      <li><a href="/#about">Nosotros</a></li>
+      <li><a href="/#services">Servicios</a></li>
+      <li><a href="/#projects">Proyectos</a></li>
+      <li><a href="/galeria" style="color: #1D9E75; font-weight: bold;">Galería</a></li>
+      <li><a href="/#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section class="gallery-page">
+    <div class="gallery-header">
+      <h2>Nuestra Galería</h2>
+      <p>Conoce la calidad de nuestros sistemas PRFV y el trabajo de nuestro equipo en terreno.</p>
+      <div class="divider-green"></div>
+    </div>
+
+   <div class="gallery-grid">
+      
+      <div class="photo-item">
+        <img src="static/imagenes/portadabiosam.jpeg" alt="Planta de tratamiento de aguas residuales BIOSAM">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanqueagua.jpeg" alt="Gran tanque de recolección de agua azul BIOSAM vertical">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanqueagua2.jpeg" alt="Batería de tanques de agua instalados en terreno rural">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanqueagua3.jpeg" alt="Sistemas de almacenamiento de agua BIOSAM en campo">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanqueagua4.jpeg" alt="Instalación de tanques verticales para agua">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanquemediano.jpeg" alt="Tanques horizontales PRFV en proceso de fabricación">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanquemediano2.jpeg" alt="Tanque vertical mediano azul en taller">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanquepequeño.jpeg" alt="Sistemas biodigestores pequeños BIOSAM">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanquepequeño2.jpeg" alt="Grupo de bases para tanques pequeños en fábrica">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanquepequeño3.jpeg" alt="Tanque PRFV pequeño con equipamiento técnico">
+      </div>
+
+      <div class="photo-item">
+        <img src="static/imagenes/tanquepequeño4.jpeg" alt="Pequeños sistemas de tratamiento PRFV">
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>BIOSAM S.A.</strong> — Biosistemas Integrados para el Saneamiento Ambiental S.A.</p>
+    <p>"Por el saneamiento ambiental del planeta"</p>
+  </footer>
+
+  <a href="https://wa.me/50582200190" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp BIOSAM">
+  </a>
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgAmpliada">
+  </div>
+
+  <script>
+    // 1. Buscamos la pantalla oscura, la foto ampliada y todas las fotos pequeñas
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgAmpliada");
+    const imagenesPequeñas = document.querySelectorAll(".photo-item img");
+    const botonCerrar = document.querySelector(".close-modal");
+
+    // 2. Le decimos a cada foto pequeña: "Cuando te hagan clic, abre la pantalla oscura y muestra tu imagen"
+    imagenesPequeñas.forEach(img => {
+      img.onclick = function() {
+        modal.style.display = "flex"; // Muestra la pantalla oscura
+        modalImg.src = this.src; // Copia la foto pequeña a la grande
+      }
+    });
+
+    // 3. Cuando hagamos clic en la "X", ocultamos la pantalla oscura
+    botonCerrar.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // 4. (Opcional) Si la gente hace clic afuera de la foto, también se cierra
+    modal.onclick = function(evento) {
+      if (evento.target !== modalImg) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
