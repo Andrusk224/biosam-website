@@ -156,13 +156,13 @@
       </div>
 
       <!-- Right side: contact form -->
-      <div class="contact-form">
-        <input type="text" placeholder="Nombre">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Asunto">
-        <textarea placeholder="Dinos sobre tu proyecto..."></textarea>
-        <button class="btn-primary">Enviar mensaje</button>
-      </div>
+      <<form class="contact-form" action="/enviar" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="asunto" placeholder="Asunto" required>
+        <textarea name="mensaje" placeholder="Dinos sobre tu proyecto..." required></textarea>
+        <button type="submit" class="btn-primary">Enviar mensaje</button>
+      </form>
 
     </div>
   </section>
