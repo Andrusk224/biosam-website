@@ -525,3 +525,44 @@ footer strong {
   background-color: white; /* El fondo se vuelve blanco */
   transform: translateY(-4px); /* El icono da un pequeño salto hacia arriba */
 }
+
+/* =========================================
+   MENÚ MÓVIL (HAMBURGUESA)
+========================================= */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #085041;
+  user-select: none;
+}
+
+/* La regla @media detecta si es una pantalla pequeña (celular) */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Muestra el botón de hamburguesa */
+  }
+  
+  .nav-links {
+    display: none; /* Oculta los enlaces horizontales */
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Ajusta la posición debajo de la barra superior */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000; /* Asegura que el menú flote por encima de las fotos */
+  }
+
+  /* Esta clase activará el menú cuando lo toquemos */
+  .nav-links.active {
+    display: flex; 
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+}

@@ -10,8 +10,13 @@
 
   <!-- ========== NAVIGATION ========== -->
   <nav>
-    <div class="logo">bio<span>sam</span></div>
-    <ul class="nav-links">
+    <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">bio<span>sam</span></a></div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="/#about">Nosotros</a></li>
       <li><a href="/#services">Servicios</a></li>
       <li><a href="/#projects">Proyectos</a></li>
@@ -193,5 +198,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    // Abre o cierra el menú al tocar la hamburguesa
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Cierra el menú automáticamente cuando el usuario toca un enlace
+    navLinks.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
